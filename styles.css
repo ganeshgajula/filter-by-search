@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #111d4a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #eee;
+  margin-bottom: 2rem;
+}
+
+.container {
+  padding: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#charactersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1.5rem;
+}
+
+.character {
+  list-style: none;
+  background-color: #eaeaea;
+  border-radius: 3px;
+  padding: 0.6rem 1.5rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    "name image"
+    "house image";
+  text-align: left;
+}
+
+.character > h2 {
+  grid-area: name;
+  margin-bottom: 0;
+}
+
+.character > p {
+  grid-area: house;
+  margin: 0;
+  margin-top: -1.1rem;
+}
+
+.character > img {
+  max-height: 100px;
+  grid-area: image;
+  border-radius: 0.2rem;
+}
+
+#searchBar {
+  width: 800px;
+  margin: auto;
+  height: 2rem;
+  border-radius: 3px;
+  border: 1px solid #eaeaea;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+#searchWrapper {
+  position: relative;
+}
+
+#searchWrapper::after {
+  content: "🔍";
+  position: absolute;
+  top: 5px;
+  right: 65px;
+}
